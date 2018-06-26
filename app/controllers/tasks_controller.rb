@@ -1,5 +1,5 @@
 class TasksController < ApplicationController
-  before_action :set_tsak, only: [:show, :edit, :uodate, :destroy]
+  before_action :set_tsak, only: [:show, :edit, :update, :destroy]
   def index
     @tasks = Task.all
   end
@@ -27,7 +27,6 @@ class TasksController < ApplicationController
   end
   
   def update
-    
     if @task.update(task_params)
     flash[:success] = 'Task は正常に更新されました'
     redirect_to @task
